@@ -1,5 +1,58 @@
+
+# =========================
+# Build output
+# =========================
+**/bin/
+**/obj/
+
+# =========================
+# Visual Studio
+# =========================
 .vs/
-bin/
-obj/
 *.user
 *.suo
+*.cache
+*.sln.docstates
+
+# =========================
+# IDE (Rider / VS Code)
+# =========================
+.idea/
+.vscode/
+
+# =========================
+# ASP.NET Core Config Secrets
+# =========================
+**/appsettings.Development.json
+**/secrets.json
+.env
+
+# =========================
+# Logs
+# =========================
+*.log
+
+# =========================
+# Publish / Deployment
+# =========================
+publish/
+wwwroot/publish/
+
+# =========================
+# Frontend (React / Angular if exists)
+# =========================
+node_modules/
+dist/
+build/
+
+# =========================
+# Database files (if local DB used)
+# =========================
+*.db
+*.sqlite
+
+# =========================
+# OS generated files
+# =========================
+.DS_Store
+Thumbs.db
