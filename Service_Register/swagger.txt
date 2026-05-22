@@ -1,0 +1,21 @@
+swagger
+dotnet add package Swashbuckle.AspNetCore
+
+// ✅ Service যোগ করুন
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
+builder.Services.AddControllers(); // Controller ব্যবহার করলে
+
+
+// ✅ Middleware যোগ করুন
+if (app.Environment.IsDevelopment())
+{
+    app.UseSwagger();
+    app.UseSwaggerUI();
+}
+
+app.UseHttpsRedirection();
+app.MapControllers(); // Controller ব্যবহার করলে
+
+[ApiController]
+[Route("api/[controller]/[action]")]

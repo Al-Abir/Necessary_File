@@ -1,0 +1,31 @@
+Database Connection
+
+Microsoft.EntityFrameworkCore
+Microsoft.EntityFrameworkCore.SqlServer
+Microsoft.EntityFrameworkCore.Tools
+Microsoft.EntityFrameworkCore.Design
+
+
+🧩 Step 1:
+"Server=(localdb)\mssqllocaldb;Database=MvcMovieContext;Trusted_Connection=True; MultipleActiveResultSets=true; TrustServerCertificate=True"
+
+Server=(localdb)\mssqllocaldb; (এটা SQL Server instance name)
+Database=MvcMovieContext; (EF Core migration run করলে এই নামে database create হবে। )
+Trusted_Connection=True; (Windows Authentication use করবে। )
+MultipleActiveResultSets=true (একই connection এ multiple query/result একসাথে handle করতে পারবে। )
+TrustServerCertificate=True"
+
+
+🧩 Step 2:  Program.cs – DI Container এ Registration
+builder.Services.AddDbContext<EmployeeDbContext>(options =>
+    options.UseSqlServer(connectionString));
+
+
+🧩 Step 3: Add-Migration Initial
+            Update-database
+
+
+
+
+
+
